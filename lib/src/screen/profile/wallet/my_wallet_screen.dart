@@ -67,7 +67,7 @@ class MyWalletScreen extends StatelessWidget {
             ? Container(
                 height: size.height,
                 width: size.width,
-                color: Colors.white,
+                // color: Colors.white,
                 child: ListView(
                   children: [
                     Stack(
@@ -124,88 +124,87 @@ class MyWalletScreen extends StatelessWidget {
                             bottom: -30.h,
                             child: SizedBox(
                               width: size.width,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Container(
-                                    height: 95.h,
-                                    width: 132.w,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          spreadRadius: 2.r,
-                                          blurRadius: 10.r,
-                                          color: Colors.black.withOpacity(0.1),
-                                          offset: const Offset(0, 5),
-                                        )
-                                      ],
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          AppTags.balance.tr,
-                                          style: isMobile(context)?
-                                              AppThemeData.profileTextStyle_13:AppThemeData.profileTextStyle_10Tab,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        height: 95.h,
+                                        // width: 132.w,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffF6F5F2),
+                                          borderRadius: BorderRadius.circular(10),
+                                          
                                         ),
-                                        SizedBox(height: 5.h),
-                                        Text(
-                                          currencyConverterController.convertCurrency(
-                                           myWalletController.myWalletModel.value.data!.balance!.balance != null ? myWalletController.myWalletModel.value.data!.balance!.balance!.toStringAsFixed(3) : "0"),
-                                          style: isMobile(context)?
-                                              AppThemeData.balanceTextStyle_16:AppThemeData.buttonDltTextStyle_12,
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 2,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              AppTags.balance.tr,
+                                              style: isMobile(context)?
+                                                  AppThemeData.profileTextStyle_13:AppThemeData.profileTextStyle_10Tab,
+                                            ),
+                                            SizedBox(height: 5.h),
+                                            Text(
+                                              currencyConverterController.convertCurrency(
+                                               myWalletController.myWalletModel.value.data!.balance!.balance != null ? myWalletController.myWalletModel.value.data!.balance!.balance!.toStringAsFixed(3) : "0"),
+                                              style: isMobile(context)?
+                                                 TextStyle(
+    color:  Colors.red,
+    fontFamily: "Poppins",
+    fontSize: 20.sp,
+    overflow: TextOverflow.clip,
+    fontWeight: FontWeight.w700,
+  ):AppThemeData.buttonDltTextStyle_12,
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 2,
+                                            ),
+                                            SizedBox(height: 10.h)
+                                          ],
                                         ),
-                                        SizedBox(height: 10.h)
-                                      ],
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      rechargeWallet(context);
-                                    },
-                                    child: Container(
-                                      height: 95.h,
-                                      width: 132.w,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10.r),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              spreadRadius: 2.r,
-                                              blurRadius: 10.r,
-                                              color:
-                                                  Colors.black.withOpacity(0.1),
-                                              offset: const Offset(0, 5))
-                                        ],
-                                      ),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            AppTags.recharge.tr,
-                                            style: isMobile(context)?
-                                            AppThemeData.profileTextStyle_13:AppThemeData.profileTextStyle_10Tab,
-                                          ),
-                                          SizedBox(height: 5.h),
-                                          SvgPicture.asset(
-                                            "assets/icons/plus_small.svg",
-                                            height: 23.h,
-                                            width: 23.w,
-                                          ),
-                                          SizedBox(height: 10.h)
-                                        ],
                                       ),
                                     ),
-                                  )
-                                ],
+                                    SizedBox(width: 15.w,),
+                                    InkWell(
+                                      onTap: () {
+                                        rechargeWallet(context);
+                                      },
+                                      child: Container(
+                                        height: 95.h,
+                                        width: 50.w,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xffC7EFC2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                         
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            // Text(
+                                            //   AppTags.recharge.tr,
+                                            //   style: isMobile(context)?
+                                            //   AppThemeData.profileTextStyle_13:AppThemeData.profileTextStyle_10Tab,
+                                            // ),
+                                            // SizedBox(height: 5.h),
+                                            SvgPicture.asset(
+                                              "assets/icons/plus_small.svg",
+                                              height: 15.h,
+                                              width: 15.w,
+                                              color: Colors.black,
+                                            ),
+                                            SizedBox(height: 10.h)
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ))
                       ],

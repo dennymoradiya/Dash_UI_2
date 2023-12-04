@@ -132,7 +132,7 @@ class CategoryScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Container(
-                                height: 100.h,
+                                height: 124.h,
                                 decoration: BoxDecoration(
                                   color: const Color(0xffDBE8C2),
                                   borderRadius: BorderRadius.all(
@@ -161,7 +161,10 @@ class CategoryScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     AppTags.featuredCategories.tr,
-                                    style: isMobile(context)? AppThemeData.priceTextStyle_14:AppThemeData.titleTextStyle_11Tab,
+                                    style: isMobile(context)? TextStyle(
+      color: Colors.black,
+      fontFamily: "Poppins Medium",
+      fontSize: 16.sp,fontWeight: FontWeight.w600):AppThemeData.titleTextStyle_11Tab,
                                   ),
                                 ],
                               ),
@@ -211,18 +214,18 @@ class CategoryScreen extends StatelessWidget {
                                           borderRadius: BorderRadius.all(
                                             Radius.circular(10.r),
                                           ),
-                                          border: Border.all(
-                                            color: const Color(0xFFEEEEEE),
-                                            width: 1,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                spreadRadius: 30.r,
-                                                blurRadius: 1,
-                                                color: const Color(0xff404040)
-                                                    .withOpacity(0.01),
-                                                offset: const Offset(0, 15))
-                                          ],
+                                          // border: Border.all(
+                                          //   color: const Color(0xFFEEEEEE),
+                                          //   width: 1,
+                                          // ),
+                                          // boxShadow: [
+                                          //   BoxShadow(
+                                          //       spreadRadius: 30.r,
+                                          //       blurRadius: 1,
+                                          //       color: const Color(0xff404040)
+                                          //           .withOpacity(0.01),
+                                          //       offset: const Offset(0, 15))
+                                          // ],
                                         ),
                                         child: Padding(
                                           padding: EdgeInsets.all(8.r),

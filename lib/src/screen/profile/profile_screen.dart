@@ -120,49 +120,50 @@ class _ProfileContentState extends State<ProfileContent> {
           Matrix4.translationValues(0.0, -20.0, 0.0),
           alignment: Alignment.bottomCenter,
           decoration: BoxDecoration(
-            color: AppThemeData.lightBackgroundColor,
+            color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
             borderRadius:
             const BorderRadius.all(Radius.circular(10)),
-            boxShadow: [
-              BoxShadow(
-                color: AppThemeData.headlineTextColor
-                    .withOpacity(0.1),
-                spreadRadius: 0.r,
-                blurRadius: 30.r,
-                offset: const Offset(
-                    0, 15), // changes position of shadow
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: AppThemeData.headlineTextColor
+            //         .withOpacity(0.1),
+            //     spreadRadius: 0.r,
+            //     blurRadius: 30.r,
+            //     offset: const Offset(
+            //         0, 15), // changes position of shadow
+            //   ),
+            // ],
           ),
           child: Padding(
             padding: EdgeInsets.all(20.r),
             child: Column(
               children: [
-                userDataModel.data!.phone == ""
-                    ? const SizedBox()
-                    : Row(
-                    children: [
-                      SizedBox(
-                        height: 20.h,
-                        width: 20.w,
-                        child: SvgPicture.asset(
-                          "assets/icons/phone_color.svg",
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                          userDataModel.data!.phone!.toString(),
-                          style: isMobile(context) ?
-                          AppThemeData.titleTextStyle_14
-                              : AppThemeData.titleTextStyle_11Tab,
-                      ),
-                    ],
-                ),
-                SizedBox(
-                  height: userDataModel.data!.phone == ""
-                      ? 0.h
-                      : 10.h,
-                ),
+                // userDataModel.data!.phone == ""
+                //     ? const SizedBox()
+                //     : Row(
+                //     children: [
+                //       SizedBox(
+                //         height: 20.h,
+                //         width: 20.w,
+                //         child: SvgPicture.asset(
+                //           "assets/icons/phone_color.svg",
+                //         ),
+                //       ),
+                //       SizedBox(width: 10.w),
+                //       Text(
+                //           userDataModel.data!.phone!.toString(),
+                //           style: isMobile(context) ?
+                //           AppThemeData.titleTextStyle_14
+                //               : AppThemeData.titleTextStyle_11Tab,
+                //       ),
+                //     ],
+                // ),
+                // SizedBox(
+                //   height: userDataModel.data!.phone == ""
+                //       ? 0.h
+                //       : 10.h,
+                // ),
                 userDataModel.data!.email == ""
                     ? const SizedBox()
                     : Row(
@@ -170,12 +171,18 @@ class _ProfileContentState extends State<ProfileContent> {
                     SizedBox(
                         height: 20.h,
                         width: 20.w,
-                        child: SvgPicture.asset(Images.email)),
+                        child: SvgPicture.asset(Images.email,color: Colors.green,)),
                     SizedBox(width: 10.w,),
                     Text(
                       userDataModel.data!.email!.toString(),
                       style: isMobile(context) ?
-                      AppThemeData.titleTextStyle_14 : AppThemeData.titleTextStyle_11Tab,
+                      TextStyle(
+    color: const Color(0xff333333),
+    fontFamily: "Poppins Medium",
+    fontSize: 14.sp,
+    overflow: TextOverflow.clip,
+    fontWeight: FontWeight.w700,
+  ) : AppThemeData.titleTextStyle_11Tab,
                     ),
                   ],
                 ),
@@ -208,159 +215,276 @@ class _ProfileContentState extends State<ProfileContent> {
   //Mobile view
   Widget mobileView(UserDataModel userDataModel)=> Padding(
     padding: EdgeInsets.symmetric(horizontal: 15.w),
-    child: Container(
+    child: Column(
+      children: [
+      isWallet != false ?  Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
         borderRadius: BorderRadius.all(Radius.circular(7.r)),
-        boxShadow: [
-          BoxShadow(
-            color: AppThemeData.boxShadowColor.withOpacity(0.1),
-            spreadRadius: 0.r,
-            blurRadius: 6.r,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: 10.h),
-          isWallet != false ?
-          InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => MyWalletScreen(
-                      userDataModel: userDataModel,
-                    ),
+       
+      ),child:     
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => MyWalletScreen(
+                            userDataModel: userDataModel,
+                          ),
+                        ),
+                      );
+                    },
+                    child: mobileViewTile("wallet",AppTags.myWallet.tr)
+                ),
+              ),
+
+        ) : const SizedBox(),
+        SizedBox(height: 9.h,),
+        // download
+             _profileContentController.profileDataModel.value.data!
+                  .isOrderedDigitalProduct != false ? Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+              Padding(
+               padding: const EdgeInsets.symmetric(vertical: 8),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => MyDownload(),
+                        ),
+                      );
+                    },
+                    child: mobileViewTile("download",AppTags.myDownload.tr)
+                ),
+              ) ,): const SizedBox(),
+               SizedBox(height: 9.h,),
+                  //My reward
+              for (int i = 0; i < addons.length; i++)
+                addons[i].addonIdentifier == "reward" && addons[i].status == true
+                    ? Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+              Padding(
+               padding: const EdgeInsets.symmetric(vertical: 8),
+                child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => MyRewardScreen(
+                              userDataModel: userDataModel,
+                              conversionRate: addons[i].addonData!.conversionRate.toString(),
+                            ),
+                          ),
+                        );
+                      },
+                      child: mobileViewTile("reward",AppTags.myRewards.tr)
                   ),
-                );
-              },
-              child: mobileViewTile("wallet",AppTags.myWallet.tr)
-          ) : const SizedBox(),
+              ) ): const SizedBox(),
+                  
+             
+         SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+              Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => EditProfile(
+                            userDataModel: _profileContentController.profileDataModel.value,
+                          ),
+                        ),
+                      );
+                    },
+                    child: mobileViewTile("edit_profile",AppTags.editProfile.tr)
+                ),
+              ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+              Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+                child: InkWell(
+                    onTap: () {
+                      homeScreenController.changeTabIndex(3);
+                    },
+                    child: mobileViewTile("favourites",AppTags.favorites.tr)
+                ),
+              ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+               Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                 child: InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.notificationContent);
+                    },
+                    child: mobileViewTile("notification",AppTags.notification.tr)
+                             ),
+               ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+                Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.trackingOrder);
+                    },
+                    child: mobileViewTile("track_order",AppTags.trackOrder.tr)
+                              ),
+                ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+               Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                 child: InkWell(
+                    onTap: () {
+                      Get.toNamed(
+                        Routes.orderHistory,
+                        parameters: {
+                          'routeName': RouteCheckOfOrderHistory.profileScreen.toString(),
+                        },
+                      );
+                    },
+                    child: mobileViewTile("order_history",AppTags.orderHistory.tr)
+                             ),
+               ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.voucherList);
+                    },
+                    child: mobileViewTile("voucher_color",AppTags.voucher.tr)
+                              ),
+                ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+               Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                 child: InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.changePassword);
+                    },
+                    child: mobileViewTile("change_password",AppTags.changePassword.tr)
+                             ),
+               ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+               Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 8),
+                 child: InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.settings);
+                    },
+                    child: mobileViewTile("setting",AppTags.settings.tr)
+                             ),
+               ),),
+               SizedBox(height: 9.h,),
+             Container(
+      decoration: BoxDecoration(
+        color: AppThemeData.headlineTextColor
+                    .withOpacity(0.05),
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+       
+      ),child:     
+               Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 8),
+                 child: InkWell(
+                    onTap: () {
+                      logoutDialogue();
+                    },
+                    child: mobileViewTile("logout",AppTags.logOut.tr)
+                             ),
+               ),),
 
-          isWallet != false ? divider():const SizedBox(),
-          //Digital Product
-          _profileContentController.profileDataModel.value.data!
-              .isOrderedDigitalProduct != false ?
-          InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => MyDownload(),
-                  ),
-                );
-              },
-              child: mobileViewTile("download",AppTags.myDownload.tr)
-          ) : const SizedBox(),
-
-          _profileContentController.profileDataModel.value.data!
-              .isOrderedDigitalProduct != false ?
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: const Divider(
-              color: AppThemeData.dividerColor,
-              thickness: 1,
-            ),
-          ) : const SizedBox(),
-          //My reward
-          for (int i = 0; i < addons.length; i++)
-            addons[i].addonIdentifier == "reward" && addons[i].status == true
-                ? InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => MyRewardScreen(
-                        userDataModel: userDataModel,
-                        conversionRate: addons[i].addonData!.conversionRate.toString(),
-                      ),
-                    ),
-                  );
-                },
-                child: mobileViewTile("reward",AppTags.myRewards.tr)
-            ) : const SizedBox(),
-
-          for (int i = 0; i < addons.length;i++)
-            addons[i].addonIdentifier == "reward" &&
-                addons[i].status == true
-                ? divider()
-                : const SizedBox(),
-
-          InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => EditProfile(
-                      userDataModel: _profileContentController.profileDataModel.value,
-                    ),
-                  ),
-                );
-              },
-              child: mobileViewTile("edit_profile",AppTags.editProfile.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                homeScreenController.changeTabIndex(3);
-              },
-              child: mobileViewTile("favourites",AppTags.favorites.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(Routes.notificationContent);
-              },
-              child: mobileViewTile("notification",AppTags.notification.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(Routes.trackingOrder);
-              },
-              child: mobileViewTile("track_order",AppTags.trackOrder.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(
-                  Routes.orderHistory,
-                  parameters: {
-                    'routeName': RouteCheckOfOrderHistory.profileScreen.toString(),
-                  },
-                );
-              },
-              child: mobileViewTile("order_history",AppTags.orderHistory.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(Routes.voucherList);
-              },
-              child: mobileViewTile("voucher_color",AppTags.voucher.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(Routes.changePassword);
-              },
-              child: mobileViewTile("change_password",AppTags.changePassword.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                Get.toNamed(Routes.settings);
-              },
-              child: mobileViewTile("setting",AppTags.settings.tr)
-          ),
-          divider(),
-          InkWell(
-              onTap: () {
-                logoutDialogue();
-              },
-              child: mobileViewTile("logout",AppTags.logOut.tr)
-          ),
-          SizedBox(height: 10.h),
-        ],
-      ),
+             
+        // Container(
+        //   decoration: BoxDecoration(
+        //     color: AppThemeData.headlineTextColor
+        //                 .withOpacity(0.05),
+        //     borderRadius: BorderRadius.all(Radius.circular(7.r)),
+        //     // boxShadow: [
+        //     //   BoxShadow(
+        //     //     color: AppThemeData.boxShadowColor.withOpacity(0.1),
+        //     //     spreadRadius: 0.r,
+        //     //     blurRadius: 6.r,
+        //     //     offset: const Offset(0, 3), // changes position of shadow
+        //     //   ),
+        //     // ],
+        //   ),
+        //   child: Column(
+        //     children: [
+             
+          
+     
+             
+        //       SizedBox(height: 10.h),
+        //     ],
+        //   ),
+        // ),
+    
+      ],
     ),
   );
   //Tab View
@@ -370,18 +494,32 @@ class _ProfileContentState extends State<ProfileContent> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(7.r)),
-        boxShadow: [
-          BoxShadow(
-            color: AppThemeData.boxShadowColor.withOpacity(0.1),
-            spreadRadius: 0.r,
-            blurRadius: 6.r,
-            offset: const Offset(
-                0, 3), // changes position of shadow
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: AppThemeData.boxShadowColor.withOpacity(0.1),
+        //     spreadRadius: 0.r,
+        //     blurRadius: 6.r,
+        //     offset: const Offset(
+        //         0, 3), // changes position of shadow
+        //   ),
+        // ],
       ),
       child: Column(
         children: [
+          Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(7.r)),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: AppThemeData.boxShadowColor.withOpacity(0.1),
+        //     spreadRadius: 0.r,
+        //     blurRadius: 6.r,
+        //     offset: const Offset(
+        //         0, 3), // changes position of shadow
+        //   ),
+        // ],
+      ),),
           SizedBox(
             height: 10.h,
           ),
@@ -536,7 +674,7 @@ class _ProfileContentState extends State<ProfileContent> {
       height: 20.h,
       width: 20.w,
       child: SvgPicture.asset(
-          "assets/icons/$icon.svg"),
+          "assets/icons/$icon.svg",color: Colors.green,),
     ),
     title: Text(
       title,
@@ -552,7 +690,7 @@ class _ProfileContentState extends State<ProfileContent> {
           height: 20.h,
           width: 20.w,
           child: SvgPicture.asset(
-              "assets/icons/$icon.svg"),
+              "assets/icons/$icon.svg",color: Colors.green,),
         ),
       ),
       Text(
