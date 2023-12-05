@@ -96,8 +96,8 @@ class CartItem extends StatelessWidget {
                           currencyConverterController
                               .convertCurrency(cart.formattedPrice.toString()),
                           style: isMobile(context)
-                              ? AppThemeData.priceTextStyle_18
-                              : AppThemeData.titleTextStyle_14Tab,
+                              ? AppThemeData.priceTextStyle_18_700
+                              : AppThemeData.priceTextStyle_18_700,
                         ),
                       ],
                     ),

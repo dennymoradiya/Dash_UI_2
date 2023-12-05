@@ -19,6 +19,7 @@ class AppThemeData {
   static const Color headlineTextColor = Color(0xff333333);
   static const Color descriptionTextColor = Color(0xff666666);
   static const Color iconColor = Color(0xff666666);
+  static const Color darkRedColor = Color(0xffDB2323);
   static const Color textFieldTextColor = Color(0xff999999);
   static const Color textFieldSuffixIconColor = Color(0xff999999);
   static const Color searchIconColor = Color(0xff999999);
@@ -158,321 +159,342 @@ class AppThemeData {
   // text style
   static final seccessfulPayTextStyle_18 = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 18.sp);
   static final welComeTextStyle_24 = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 24.sp);
   static final timeDateTextStyle_12 = TextStyle(
-      color: const Color(0xffFFFFFF), fontFamily: "Poppins", fontSize: 12.sp,fontWeight: FontWeight.w600);
+      color: const Color(0xffFFFFFF), fontFamily: "Mulish", fontSize: 12.sp,fontWeight: FontWeight.w600);
   static final timeDateTextStyleTab = TextStyle(
-      color: const Color(0xffFFFFFF), fontFamily: "Poppins", fontSize: 9.sp,fontWeight: FontWeight.w600);
+      color: const Color(0xffFFFFFF), fontFamily: "Mulish", fontSize: 9.sp,fontWeight: FontWeight.w600);
   static final timeDateTextStyle_13 = TextStyle(
       color: const Color(0xffF51E46),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 13.sp);
   static final timeDateTextStyle_10Tab = TextStyle(
       color: const Color(0xffF51E46),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 10.sp);
   static final orderHistoryTextStyle_12 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 12.sp);
   static final orderHistoryTextStyle_9Tab = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 9.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 9.sp);
   static final orderHistoryPDFTextStyle_13 = TextStyle(
-      color: const Color(0xffF15642), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xffF15642), fontFamily: "Mulish", fontSize: 13.sp);
   static final orderHistoryPDFTextStyleTab = TextStyle(
-      color: const Color(0xffF15642), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xffF15642), fontFamily: "Mulish", fontSize: 10.sp);
   static final orderHistoryStatusTextStyle_13 = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 13.sp);
   static final orderHistoryStatusTextStyle_10Tab = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 10.sp);
 
   static final stepTextStyle_12 =
-      TextStyle(fontFamily: "Poppins", fontSize: 12.sp);
+      TextStyle(fontFamily: "Mulish", fontSize: 12.sp);
   static final headerTextStyle_16reg =
-      TextStyle(fontFamily: "Poppins", fontSize: 16.sp);
+      TextStyle(fontFamily: "Mulish", fontSize: 16.sp);
   static final timeDateTextStyle_11 = TextStyle(
-      color: const Color(0xffFFFFFF), fontFamily: "Poppins", fontSize: 11.sp);
+      color: const Color(0xffFFFFFF), fontFamily: "Mulish", fontSize: 11.sp);
   static final timeDateTextStyle_10 = TextStyle(
-      color: const Color(0xffF51E46), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xffF51E46), fontFamily: "Mulish", fontSize: 10.sp);
   static final timeDateTextStyle_8Tab = TextStyle(
-      color: const Color(0xffF51E46), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xffF51E46), fontFamily: "Mulish", fontSize: 10.sp);
   static final addressDefaultTextStyle_10 = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 10.sp);
   static final priceVideoTextStyle_14 = TextStyle(
       color: const Color(0xffF51E46),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 14.sp);
   static final headerTextStyle = TextStyle(
       color: Color.fromARGB(255, 0, 0, 0),
-      fontFamily: "Poppins Medium",
-      fontWeight: FontWeight.w600,
-      fontSize: 18.sp);
+      fontFamily: "Mulish",
+      fontWeight: FontWeight.w700,
+      fontSize: 18);
   static final headerTextStyleTab = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
-      fontSize: 13.sp);
+      fontFamily: "Mulish",
+      fontWeight: FontWeight.w700,
+      fontSize: 18);
   static final addAddressTextStyle = TextStyle(
       color: Color.fromARGB(255, 0, 0, 0),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontWeight: FontWeight.w600,
       fontSize: 15.sp);
   static final headerTextStyle_16 = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 16.sp,
   );
+  static final headerTextStyle_18_700 = TextStyle(
+    color: const Color(0xFF333333),
+    fontFamily: "Mulish",
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700
+  );
   static final headerPhoneTextStyle_16 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 16.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 16.sp);
   static final headerTextStyle_14 = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 14.sp);
   static final voucherTitle = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 14.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 14.sp);
   static final titleTextStyle_13 = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
   );
   static final titleTextStyleTab = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
   );
   static final profileTextStyle_13 = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 13.sp);
   static final profileTextStyle_10Tab = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 10.sp);
   static final favoriteTextStyle_14 = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 14.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 14.sp);
   static final paymentTypeTextStyle_13 = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 13.sp);
   static final paymentTypeTextStyle_12 = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 12.sp);
   static final paymentStatusTextStyle_13 = TextStyle(
-      color: const Color(0xff6DBEA3), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff6DBEA3), fontFamily: "Mulish", fontSize: 13.sp);
   static final walletTextStyle_12 = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 12.sp);
   static final walletTextStyle_10Tab = TextStyle(
-      color: const Color(0xff666666), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff666666), fontFamily: "Mulish", fontSize: 10.sp);
   static final addLocationTextStyle_13 = TextStyle(
-      color: const Color(0xff0EA5DE), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff0EA5DE), fontFamily: "Mulish", fontSize: 13.sp);
   static final addAddressTextStyle_13 = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 13.sp);
   static final addAddressTextStyle_10Tab = TextStyle(
-      color: const Color(0xff56A8C7), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff56A8C7), fontFamily: "Mulish", fontSize: 10.sp);
   static final hintTextStyle_13 = TextStyle(
-      color: const Color(0xff999999), fontFamily: "Poppins", fontSize: 13.sp);
+      color: const Color(0xff999999), fontFamily: "Mulish", fontSize: 13.sp);
   static final hintTextStyle_10Tab = TextStyle(
-      color: const Color(0xff999999), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff999999), fontFamily: "Mulish", fontSize: 10.sp);
   static final writeReviewTextStyle_13 = TextStyle(
       color: const Color(0xff0EA5DE),
-      fontFamily: "Poppins",
+      fontFamily: "Mulish",
       fontSize: 13.sp,
       decoration: TextDecoration.underline);
   static final hintSkipTextStyle_15 = TextStyle(
-      color: const Color(0xff999999), fontFamily: "Poppins", fontSize: 15.sp);
+      color: const Color(0xff999999), fontFamily: "Mulish", fontSize: 15.sp);
   static final qsTextStyle_12 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 12.sp);
   static final qsTextStyle_9Tab = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 9.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 9.sp);
   static final qsboldTextStyle_12 = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 12.sp);
   static final whyUsTextStyle_13 = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 13.sp);
   static final whyUsTextStyle_10Tab = TextStyle(
       color: const Color(0xff333333),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 10.sp);
   static final priceTextStyle_13 = TextStyle(
       color: const Color(0xffC9151B),
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 13.sp);
   static final titleTextStyle_14 = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 14.sp,
     overflow: TextOverflow.clip,
   );
   static final titleTextStyle_14_400 = TextStyle(
     color: const Color(0xff999999),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontWeight: FontWeight.w400,
     fontSize: 14.sp,
     overflow: TextOverflow.clip,
   );
+  static final titleTextStyle_14_700 = TextStyle(
+    color: const Color(0xff333333),
+
+    fontFamily: "Mulish",
+    fontWeight: FontWeight.w700,
+    fontSize: 14,
+    overflow: TextOverflow.clip,
+  );
   static final titleTextStyle_16 = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 16.sp,
     overflow: TextOverflow.clip,
   );
   static final titleTextStyle_11Tab = TextStyle(
     color: AppThemeData.primeryColor,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 11.sp,
     overflow: TextOverflow.clip,
   );
   static final titleTextStyle_14Tab = TextStyle(
     color: AppThemeData.primeryColor,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 14.sp,
     overflow: TextOverflow.clip,
   );
   static final categoryTitleTextStyle_14 = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 14.sp,
     overflow: TextOverflow.clip,
   );
   static final categoryTitleTextStyleTab = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 12.sp,
     overflow: TextOverflow.clip,
   );
   static final buttonDltTextStyle_13 = TextStyle(
     color: const Color(0xffD16D86),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
     overflow: TextOverflow.clip,
   );
   static final buttonDltTextStyle_10Tab = TextStyle(
     color: const Color(0xffD16D86),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
     overflow: TextOverflow.clip,
   );
   static final buttonDltTextStyle_12 = TextStyle(
     color: const Color(0xffD16D86),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
     overflow: TextOverflow.clip,
   );
   static final balanceTextStyle_16 = TextStyle(
     color: const Color(0xffD16D86),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 16.sp,
     overflow: TextOverflow.clip,
   );
   static final buttonTextStyle_13 = TextStyle(
     color: const Color(0xff56A8C7),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
     overflow: TextOverflow.clip,
   );
   static final buttonTextStyle_10Tab = TextStyle(
     color: const Color(0xff56A8C7),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
     overflow: TextOverflow.clip,
   );
   static final labelTextStyle_16 = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 16.sp,
   );
   static final labelTextStyle_12tab = TextStyle(
     color: const Color(0xff333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 12.sp,
   );
   static final priceTextStyle_14 = TextStyle(
       color: AppThemeData.primeryColor,
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
       fontSize: 14.sp);
   static final priceTextStyle_18 = TextStyle(
       color: AppThemeData.primeryColor,
-      fontFamily: "Poppins Medium",
+      fontFamily: "Mulish",
+      fontSize: 18.sp);
+  static final priceTextStyle_18_700 = TextStyle(
+      color: AppThemeData.primeryColor,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Mulish",
       fontSize: 18.sp);
   static final buttonTextStyle_14 = TextStyle(
-      color: buttonTextColor, fontFamily: "Poppins Medium", fontSize: 14.sp);
+      color: buttonTextColor, fontFamily: "Mulish", fontSize: 14.sp);
   static final buttonTextStyle_11Tab = TextStyle(
-      color: buttonTextColor, fontFamily: "Poppins Medium", fontSize: 11.sp);
+      color: buttonTextColor, fontFamily: "Mulish", fontSize: 11.sp);
   static final buttonTextStyle_14Reg = TextStyle(
-      color: const Color(0xff000000), fontFamily: "Poppins", fontSize: 14.sp);
+      color: const Color(0xff000000), fontFamily: "Mulish", fontSize: 14.sp);
   static final buttonTextStyleTab = TextStyle(
-      color: const Color(0xff000000), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff000000), fontFamily: "Mulish", fontSize: 10.sp);
   static final cardButtonTextStyle_14 = TextStyle(
-      color: const Color(0xffFFFFFF), fontFamily: "Poppins", fontSize: 14.sp);
+      color: const Color(0xffFFFFFF), fontFamily: "Mulish", fontSize: 14.sp);
   static final categoryTitleTextStyle_12 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 12.sp);
   static final categoryTitleTextStyle_9Tab = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 9.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 9.sp);
   static final categoryTextStyle_14 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 14.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 14.sp);
   static final forgotTextStyle_12 = TextStyle(
-      color: const Color(0xffF65858), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xffF65858), fontFamily: "Mulish", fontSize: 12.sp);
   static final reatingTextStyle_12 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 12.sp);
   static final backToHomeTextStyle_12 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 12.sp);
   static final dateTextStyle_12 = TextStyle(
-      color: const Color(0xff999999), fontFamily: "Poppins", fontSize: 12.sp);
+      color: const Color(0xff999999), fontFamily: "Mulish", fontSize: 12.sp);
   static final dateTextStyle_9Tab = TextStyle(
-      color: const Color(0xff999999), fontFamily: "Poppins", fontSize: 9.sp);
+      color: const Color(0xff999999), fontFamily: "Mulish", fontSize: 9.sp);
   static final todayDealNewStyle = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 10.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 10.sp);
   static final todayDealNewStyleTab = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 8.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 8.sp);
   static final todayDealTitleStyle =
-      TextStyle(color: Colors.black, fontFamily: "Poppins", fontSize: 14.sp,fontWeight: FontWeight.w600);
+      TextStyle(color: Colors.black, fontFamily: "Mulish", fontSize: 14,fontWeight: FontWeight.w600);
   static final todayDealTitleStyleTab =
-      TextStyle(color: Colors.black, fontFamily: "Poppins", fontSize: 14.sp);
+      TextStyle(color: Colors.black, fontFamily: "Mulish", fontSize: 14.sp);
   static final todayDealOriginalPriceStyle = TextStyle(
     color: const Color(0xff999999),
-    fontFamily: "Poppins Medium",
-    fontSize: 12.sp,
+    fontFamily: "Mulish",
+    fontSize: 12,
     // decoration: TextDecoration.lineThrough,
   );
   static final todayDealOriginalPriceStyleTab = TextStyle(
     color: const Color(0xff999999),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 12.sp,
     // decoration: TextDecoration.lineThrough,
   );
   static final todayDealDiscountPriceStyle = TextStyle(
     color: AppThemeData.primeryColor,
-    fontFamily: "Poppins Medium",
-    fontSize: 16.sp,
+    fontFamily: "Mulish",
+    fontSize: 16,
+    fontWeight: FontWeight.w700
   );
   static final todayDealDiscountPriceStyleTab = TextStyle(
     color: AppThemeData.primeryColor,
     fontSize: 16.sp,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
   );
   static final popularCategoryTitle_11 = TextStyle(
-      color: const Color(0xff333333), fontFamily: "Poppins", fontSize: 11.sp);
+      color: const Color(0xff333333), fontFamily: "Mulish", fontSize: 11.sp);
   static final rewardStyle = TextStyle(
     color: Colors.black,
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 9.sp,
   );
   static final trackingOrderTitle = TextStyle(
     fontSize: 14.sp,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     color: const Color(0xFF333333),
   );
   static final trackingOrderTitleTab = TextStyle(
     fontSize: 9.sp,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     color: const Color(0xFF333333),
   );
   static final trackingOrderSubTitle = TextStyle(
     fontSize: 12.sp,
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     color: const Color(0xFF333333),
   );
   static final trackingOrderSubTitleTab = TextStyle(
     fontSize: 9.sp,
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     color: const Color(0xFF333333),
   );
   static final settingsTitleStyle = TextStyle(
@@ -489,53 +511,53 @@ class AppThemeData {
   // Details Screen
   static final detwailsScreenBottomSheetTitle = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
     overflow: TextOverflow.ellipsis,
   );
   static final detailsScreenBottomSheetTitleTab = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
     overflow: TextOverflow.ellipsis,
   );
   static final detailsScreenTotal = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
   );
   static final detailsScreenTotalTab = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
   );
   static final detailsScreenTotalPrice = TextStyle(
     color: const Color(0xFF333333),
     fontWeight: FontWeight.bold,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 14.sp,
   );
   static final detailsScreenTotalPriceTab = TextStyle(
     color: const Color(0xFF333333),
     fontWeight: FontWeight.bold,
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
   );
   static final detailsScreenPhoneNumber = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins Medium",
+    fontFamily: "Mulish",
     fontSize: 13.sp,
   );
   static final detailsScreenPhoneNumberShow = TextStyle(
     color: const Color(0xFF333333),
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     fontSize: 10.sp,
   );
 
   static final profileTxtTileTitle = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
-    fontFamily: "Poppins",
+    fontFamily: "Mulish",
     color: AppThemeData.descriptionTextColor,
   );
 }

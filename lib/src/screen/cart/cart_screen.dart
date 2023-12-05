@@ -375,6 +375,7 @@ class _CartScreenState extends State<CartScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 8,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -395,6 +396,8 @@ class _CartScreenState extends State<CartScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(height: 8,),
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -412,6 +415,8 @@ class _CartScreenState extends State<CartScreen> {
                                         : AppThemeData.titleTextStyle_14_400),
                               ],
                             ),
+                            SizedBox(height: 8,),
+
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [

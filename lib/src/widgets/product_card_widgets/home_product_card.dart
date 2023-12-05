@@ -206,7 +206,7 @@ class HomeProductCard extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style: isMobile(context)
                                 ? AppThemeData.todayDealTitleStyle
-                                : AppThemeData.todayDealTitleStyleTab),
+                                : AppThemeData.todayDealTitleStyle),
                       ),
                       SizedBox(height: 5.h),
                       Padding(
@@ -226,7 +226,7 @@ class HomeProductCard extends StatelessWidget {
                                           ? AppThemeData
                                               .todayDealDiscountPriceStyle
                                           : AppThemeData
-                                              .todayDealDiscountPriceStyleTab,
+                                              .todayDealDiscountPriceStyle,
                                     ),
                                   ],
                                 )
@@ -256,7 +256,7 @@ class HomeProductCard extends StatelessWidget {
                                           ? AppThemeData
                                               .todayDealDiscountPriceStyle
                                           : AppThemeData
-                                              .todayDealDiscountPriceStyleTab,
+                                              .todayDealDiscountPriceStyle,
                                     ),
                                   ],
                                 ),

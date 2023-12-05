@@ -114,8 +114,8 @@ class MyWalletScreen extends StatelessWidget {
                                 Text(
                                     "${userDataModel.data!.firstName!.toString()} ${userDataModel.data!.lastName!.toString()}",
                                     style: isMobile(context)
-                                        ? AppThemeData.titleTextStyle_14
-                                        : AppThemeData.titleTextStyle_11Tab),
+                                        ? AppThemeData.headerTextStyle_18_700
+                                        : AppThemeData.headerTextStyle_18_700),
                               ],
                             ),
                           ),
@@ -125,7 +125,8 @@ class MyWalletScreen extends StatelessWidget {
                             child: SizedBox(
                               width: size.width,
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
@@ -136,8 +137,8 @@ class MyWalletScreen extends StatelessWidget {
                                         // width: 132.w,
                                         decoration: BoxDecoration(
                                           color: Color(0xffF6F5F2),
-                                          borderRadius: BorderRadius.circular(10),
-                                          
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Column(
                                           mainAxisAlignment:
@@ -145,21 +146,39 @@ class MyWalletScreen extends StatelessWidget {
                                           children: [
                                             Text(
                                               AppTags.balance.tr,
-                                              style: isMobile(context)?
-                                                  AppThemeData.profileTextStyle_13:AppThemeData.profileTextStyle_10Tab,
+                                              style: isMobile(context)
+                                                  ? AppThemeData
+                                                      .favoriteTextStyle_14
+                                                  : AppThemeData
+                                                      .favoriteTextStyle_14,
                                             ),
                                             SizedBox(height: 5.h),
                                             Text(
-                                              currencyConverterController.convertCurrency(
-                                               myWalletController.myWalletModel.value.data!.balance!.balance != null ? myWalletController.myWalletModel.value.data!.balance!.balance!.toStringAsFixed(3) : "0"),
-                                              style: isMobile(context)?
-                                                 TextStyle(
-    color:  Colors.red,
-    fontFamily: "Poppins",
-    fontSize: 20.sp,
-    overflow: TextOverflow.clip,
-    fontWeight: FontWeight.w700,
-  ):AppThemeData.buttonDltTextStyle_12,
+                                              currencyConverterController
+                                                  .convertCurrency(
+                                                      myWalletController
+                                                                  .myWalletModel
+                                                                  .value
+                                                                  .data!
+                                                                  .balance!
+                                                                  .balance !=
+                                                              null
+                                                          ? myWalletController
+                                                              .myWalletModel
+                                                              .value
+                                                              .data!
+                                                              .balance!
+                                                              .balance!
+                                                              .toStringAsFixed(
+                                                                  3)
+                                                          : "0"),
+                                              style: TextStyle(
+                                                color:
+                                                    AppThemeData.darkRedColor,
+                                                fontSize: 24,
+                                                overflow: TextOverflow.clip,
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                               overflow: TextOverflow.ellipsis,
                                               maxLines: 2,
                                             ),
@@ -168,7 +187,9 @@ class MyWalletScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 15.w,),
+                                    SizedBox(
+                                      width: 15.w,
+                                    ),
                                     InkWell(
                                       onTap: () {
                                         rechargeWallet(context);
@@ -180,7 +201,6 @@ class MyWalletScreen extends StatelessWidget {
                                           color: Color(0xffC7EFC2),
                                           borderRadius:
                                               BorderRadius.circular(10.r),
-                                         
                                         ),
                                         child: Column(
                                           mainAxisAlignment:
@@ -227,9 +247,13 @@ class MyWalletScreen extends StatelessWidget {
                                 color: myWalletController.myWalletModel.value
                                             .data!.recharges![index].type ==
                                         "income"
-                                    ? AppThemeData.walletMultipleColor[1 % AppThemeData.walletMultipleColor.length]
+                                    ? AppThemeData.walletMultipleColor[1 %
+                                            AppThemeData
+                                                .walletMultipleColor.length]
                                         .withOpacity(0.1)
-                                    : AppThemeData.walletMultipleColor[0 % AppThemeData.walletMultipleColor.length]
+                                    : AppThemeData.walletMultipleColor[0 %
+                                            AppThemeData
+                                                .walletMultipleColor.length]
                                         .withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(10.r),
                               ),
@@ -246,7 +270,10 @@ class MyWalletScreen extends StatelessWidget {
                                       children: [
                                         Text(
                                           AppTags.orderTotalAmount.tr,
-                                          style: isMobile(context)? AppThemeData.walletTextStyle_12:AppThemeData.walletTextStyle_10Tab,
+                                          style: isMobile(context)
+                                              ? AppThemeData.walletTextStyle_12
+                                              : AppThemeData
+                                                  .walletTextStyle_10Tab,
                                         ),
                                         Text(
                                           myWalletController
@@ -266,10 +293,18 @@ class MyWalletScreen extends StatelessWidget {
                                                         .recharges![index]
                                                         .type ==
                                                     "income"
-                                                ? AppThemeData.walletMultipleColor[
-                                                    1 % AppThemeData.walletMultipleColor.length]
-                                                : AppThemeData.walletMultipleColor[
-                                                    0 % AppThemeData.walletMultipleColor.length],
+                                                ? AppThemeData
+                                                        .walletMultipleColor[
+                                                    1 %
+                                                        AppThemeData
+                                                            .walletMultipleColor
+                                                            .length]
+                                                : AppThemeData
+                                                        .walletMultipleColor[
+                                                    0 %
+                                                        AppThemeData
+                                                            .walletMultipleColor
+                                                            .length],
                                             fontFamily: "Poppins",
                                             fontSize: 16.sp,
                                             overflow: TextOverflow.clip,
@@ -301,7 +336,8 @@ class MyWalletScreen extends StatelessWidget {
                                           width: 80.w,
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
-                                              color: AppThemeData.walletBoxColors
+                                              color: AppThemeData
+                                                  .walletBoxColors
                                                   .withOpacity(0.16),
                                               borderRadius:
                                                   BorderRadius.circular(5)),
@@ -341,7 +377,11 @@ class MyWalletScreen extends StatelessWidget {
                                                     .status
                                                     .toString()
                                                     .capitalizeFirstOfEach,
-                                                style: isMobile(context)? AppThemeData.paymentStatusTextStyle_13: AppThemeData.walletTextStyle_12)),
+                                                style: isMobile(context)
+                                                    ? AppThemeData
+                                                        .paymentStatusTextStyle_13
+                                                    : AppThemeData
+                                                        .walletTextStyle_12)),
                                       ],
                                     ),
                                   ],
@@ -414,7 +454,9 @@ class MyWalletScreen extends StatelessWidget {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: AppTags.enterYourAmount.tr,
-                  hintStyle:isMobile(context)? AppThemeData.hintTextStyle_13:AppThemeData.hintTextStyle_10Tab,
+                  hintStyle: isMobile(context)
+                      ? AppThemeData.hintTextStyle_13
+                      : AppThemeData.hintTextStyle_10Tab,
                   contentPadding: EdgeInsets.only(
                     left: 8.w,
                     right: 8.w,
